@@ -10,4 +10,4 @@ writer.write(##what you want to add)
 
 writer.close
 
-"Created '#{@file_name}' containing #{@file.length} characters."
+"Created '#{ARGV[1]}' containing #{incoming_text.length} characters."
