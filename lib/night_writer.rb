@@ -1,12 +1,18 @@
+require_relative './braille'
+
 handle = File.open(ARGV[0], "r")
 
 incoming_text = handle.read
 
-handle.close
+file = Braille.new(incoming_text)
 #CREATE A NEW VARIABLE TO SET WHAT YOU WANT TO DO FOR WRITTING
+#braille_writer = file.translate(incoming_text)
+
+handle.close
+
 writer = File.open(ARGV[1], "w")
 
-writer.write(##what you want to add)
+writer.write(#braille_writer)
 
 writer.close
 
