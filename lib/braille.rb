@@ -51,4 +51,8 @@ class Braille
             "9" => [".0", "0.", ".."]
         }
     end
+
+    def translate(text)
+        
+    end
 end
