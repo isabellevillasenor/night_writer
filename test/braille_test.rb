@@ -37,7 +37,7 @@ class BrailleTest < Minitest::Test
     # end
 
     def test_translate_word
-        expected = "0.00...00..."
+        expected = "0." + "\n" +  "00" + "\n" + ".."
         assert_equal expected, @braille_file.translate_words("hi")
     end
 end
