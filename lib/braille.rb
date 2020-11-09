@@ -53,8 +53,12 @@ class Braille
     end
 
     def translate(text)
-        text.chars.map do |letter|
+        text.chars.flat_map do |letter|
             assign_braille[letter]
         end
+    end
+
+    def translate_words(text)
+        
     end
 end
