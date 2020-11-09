@@ -58,7 +58,17 @@ class Braille
         end
     end
 
+    def word_render(text)
+        translate(text).each_slice(40).to_a
+    end
+
     def translate_words(text)
-        
+        grid = []
+        word_render(text).flat_map do |letter|
+            top.to_s += letter[0]
+            middle.to_s += letter[1]
+            bottom.to_s += letter[2]
+        end
+        grid << top + middle + bottom
     end
 end
