@@ -14,7 +14,6 @@ class BrailleToEnglish
             assign_english_to_braille.values_at(braille)
          end
         end.flatten.pop
-        words
     end
     
     def group_rows(text)
