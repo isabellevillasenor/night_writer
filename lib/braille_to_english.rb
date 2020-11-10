@@ -2,8 +2,9 @@ require_relative './dictionary'
 
 class BrailleToEnglish
     include Dictionary
+    
     attr_reader :text
-    def initialize (text)
+    def initialize(text)
         @text = text
     end
       
@@ -23,14 +24,9 @@ class BrailleToEnglish
       words
     end
 
-    def set_params(text)
-        if letter_translate(text).count == 39
-            "\n"
-        else
-            letter_translate(text)
-        end
-            # letter_translate(text).each_slice(40).to_a.flatten
-    end
+    # def set_params(text)
+    #     letter_translate(text).each_slice(40).to_a.flatten
+    # end
 
     def translate(text)
         words = []
