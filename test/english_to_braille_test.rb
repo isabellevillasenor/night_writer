@@ -36,16 +36,13 @@ class EnglishToBrailleTest < Minitest::Test
     end
     
     # def test_set_params
-    #     expected = [
-    #         "0.0.00.....00..0....0.....000.00..0.0.....0000.00..0...0.0.......0.000..00.0.0...0..0.0...00...00..0...00.\n
-    #         00.0.00...0.0..0..0.0.0...000.0....00.000.00...0......000.00..0.0.0..0..0.0.....00....0...0000..0.....0000\n
-    #         .0..00....00.000....00.0...0.0....00.0.0...00.00.000..000.0...0.000..0...00.000.00...0.0...00.0..0000.00..\n"
-    #     ]
-
+    #     text = "helloheyhibonjourkonichiwahowareyoudoinggood"
+    #     expected = "helloheyhibonjourkonichiwahowareyoudoing\ngood"
+    #     assert_equal expected, @braille_file.set_params(text)
     # end
 
     def test_translate_word
-        expected = "0..0" + "\n" +  "000." + "\n" + "...."
+        expected = "0..0\n000.\n...."
         assert_equal expected, @braille_file.translate("hi")
     end
 

@@ -22,20 +22,16 @@ class EnglishToBraille
       words
     end
     
-    def set_params(text)
-        if group_rows(text).flatten.count == 39
-            "\n"
-        else
-            group_rows(text)
-        end
-    end
+    # def set_params(text)
+    #     text.scan(/.{1,40}/)
+    # end
 
     def translate(text)
         words = []
         top = []
         middle = []
         bottom = []
-        set_params(text).map do |letter|
+        group_rows(text).map do |letter|
             top << letter[0]
             middle << letter[1]
             bottom << letter[2]        
