@@ -12,7 +12,7 @@ handle.close
 
 writer = File.open(ARGV[1], "w")
 
-writer.write(incoming_text)
+writer.write(braille_writer)
 
 writer.close
 
