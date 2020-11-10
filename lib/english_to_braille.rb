@@ -9,7 +9,7 @@ class EnglishToBraille
 
     def letter_translate(text)
         text.chars.flat_map do |letter|
-            assign_braille[letter]
+            assign_braille_to_english[letter]
         end
     end
 
@@ -22,7 +22,11 @@ class EnglishToBraille
     end
 
     def set_params(text)
-        letter_translate(text).each_slice(40).to_a.flatten
+        if letter_translate(text).count == 39
+            "\n"
+        else
+            letter_translate(text)
+        end
     end
 
     def translate(text)
