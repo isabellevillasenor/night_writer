@@ -7,7 +7,7 @@ class BrailleTest < Minitest::Test
         text = './message.txt'
         file = File.open(text, "r")
         incoming_text = file.read
-        @braille_file = Braille.new(incoming_text)
+        @braille_file = EnglishToBraille.new(incoming_text)
     end
 
     def test_it_exists
@@ -38,6 +38,7 @@ class BrailleTest < Minitest::Test
 
     def test_translate_word
         expected = "0..0" + "\n" +  "000." + "\n" + "...."
-        assert_equal expected, @braille_file.make_layout("hi")
+        assert_equal expected, @braille_file.translate("hi")
     end
+
 end

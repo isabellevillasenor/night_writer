@@ -4,9 +4,9 @@ handle = File.open(ARGV[0], "r")
 
 incoming_text = handle.read
 
-file = Braille.new(incoming_text)
+file = EnglishToBraille.new(incoming_text)
 
-# braille_writer = file.translate(incoming_text)
+braille_writer = file.translate(incoming_text)
 
 handle.close
 
