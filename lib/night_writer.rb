@@ -1,4 +1,4 @@
-require_relative './braille'
+require_relative './english_to_braille'
 
 handle = File.open(ARGV[0], "r")
 

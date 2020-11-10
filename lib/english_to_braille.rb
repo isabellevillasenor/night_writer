@@ -22,7 +22,7 @@ class EnglishToBraille
     end
 
     def set_params(text)
-        translate(text).each_slice(40).to_a.flatten
+        letter_translate(text).each_slice(40).to_a.flatten
     end
 
     def translate(text)
