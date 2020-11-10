@@ -31,13 +31,13 @@ class BrailleTest < Minitest::Test
         assert_equal ["..", "0.", "00"], @braille_file.translate("?")
     end
 
-    # def test_word_render
-    #     expected = [""]
-    #     assert_equal expected, 
-    # end
+    def test_group_rows
+        expected = [["0.", "00", ".."], [".0", "0.", ".."]]
+        assert_equal expected, @braille_file.group_rows("hi")
+    end
 
     def test_translate_word
-        expected = "0." + "\n" +  "00" + "\n" + ".."
-        assert_equal expected, @braille_file.translate_words("hi")
+        expected = "0..0" + "\n" +  "000." + "\n" + "...."
+        assert_equal expected, @braille_file.make_layout("hi")
     end
 end
