@@ -2,6 +2,7 @@ require_relative './dictionary'
 
 class EnglishToBraille
     include Dictionary 
+
     attr_reader :text
     def initialize(text)
         @text = text
@@ -15,17 +16,17 @@ class EnglishToBraille
 
     def group_rows(text)
         words = []
-        set_params(text).each_slice(3) do |letter|
+        letter_translate(text).each_slice(3) do |letter|
             words << letter
         end
       words
     end
-
+    
     def set_params(text)
-        if letter_translate(text).count == 39
+        if group_rows(text).flatten.count == 39
             "\n"
         else
-            letter_translate(text)
+            group_rows(text)
         end
     end
 
@@ -34,7 +35,7 @@ class EnglishToBraille
         top = []
         middle = []
         bottom = []
-        group_rows(text).map do |letter|
+        set_params(text).map do |letter|
             top << letter[0]
             middle << letter[1]
             bottom << letter[2]        
@@ -43,5 +44,4 @@ class EnglishToBraille
         words.join
     end
 
-  
 end
