@@ -1,10 +1,10 @@
-require_relative './braille'
+require_relative './braille_to_english'
 
 handle = File.open(ARGV[0], "r")
 
 incoming_text = handle.read
 
-file = Braille.new(incoming_text)
+file = BrailleToEnglish.new(incoming_text)
 
 english_writer = file.translate(incoming_text)
 
