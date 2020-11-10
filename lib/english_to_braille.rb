@@ -22,24 +22,22 @@ class EnglishToBraille
       words
     end
     
-    def set_params(text)
-        text.scan(/.{1,40}/)
-    end
+    # def set_params(text)
+    #     text.scan(/.{1,40}/)
+    # end
 
     def translate(text)
         words = []
         top = []
         middle = []
         bottom = []
-        set_params(text).collect do |word|
-        group_rows(word).map do |letter|
+        group_rows(text).map do |letter|
             top << letter[0]
             middle << letter[1]
             bottom << letter[2]        
             words = top + ["\n"] + middle + ["\n"] + bottom
         end
         words.join
-      end
     end
 
 end

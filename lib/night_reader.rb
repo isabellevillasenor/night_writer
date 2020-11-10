@@ -6,7 +6,7 @@ incoming_text = handle.read
 
 file = BrailleToEnglish.new(incoming_text)
 
-english_writer = file.translate(incoming_text)
+english_writer = file.braille_translate(incoming_text)
 
 handle.close
 
